@@ -1,5 +1,5 @@
 {
-  "name": "casbin/webman-permission",
+  "name": "hsk99/webman-permission",
   "keywords": [
     "webman",
     "casbin",
@@ -21,7 +21,7 @@
   "type": "library",
   "license": "MIT",
   "require": {
-    "php": ">=7.4",
+    "php": ">=7.3",
     "casbin/casbin": "^3.20",
     "topthink/think-orm": "^2.0",
     "php-di/php-di": "^6.3",
