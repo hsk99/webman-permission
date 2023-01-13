@@ -30,7 +30,7 @@ class LaravelRuleModel extends Model
      *
      * @var Repository
      */
-    protected Repository $store;
+    protected $store;
 
     /**
      * Fillable.
@@ -44,7 +44,7 @@ class LaravelRuleModel extends Model
      *
      * @var string
      */
-    protected string $guard;
+    protected $guard;
 
     /**
      * 架构函数

@@ -41,7 +41,7 @@ class LaravelDatabaseAdapter implements Adapter, UpdatableAdapter, BatchAdapter,
      *
      * @var LaravelRuleModel
      */
-    protected LaravelRuleModel $model;
+    protected $model;
 
     /**
      * LaravelDatabaseAdapter constructor.
@@ -250,7 +250,7 @@ class LaravelDatabaseAdapter implements Adapter, UpdatableAdapter, BatchAdapter,
             }
         }
 
-        $oldP = $instance->get()->makeHidden(['created_at','updated_at', 'id', 'ptype'])->toArray();
+        $oldP = $instance->get()->makeHidden(['created_at', 'updated_at', 'id', 'ptype'])->toArray();
         foreach ($oldP as &$item) {
             $item = $this->filterRule($item);
             $removedRules[] = $item;
@@ -364,10 +364,12 @@ class LaravelDatabaseAdapter implements Adapter, UpdatableAdapter, BatchAdapter,
         } else {
             throw new InvalidFilterTypeException('invalid filter type');
         }
-        $rows = $instance->get()->makeHidden(['created_at','updated_at', 'id'])->toArray();
+        $rows = $instance->get()->makeHidden(['created_at', 'updated_at', 'id'])->toArray();
         if ($rows) {
             foreach ($rows as $row) {
-                $row = array_filter($row, function($value) { return !is_null($value) && $value !== ''; });
+                $row = array_filter($row, function ($value) {
+                    return !is_null($value) && $value !== '';
+                });
                 $line = implode(', ', array_filter($row, function ($val) {
                     return '' != $val && !is_null($val);
                 }));

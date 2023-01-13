@@ -51,7 +51,7 @@ class Permission implements Bootstrap
     /**
      * @var Enforcer|null $_manager
      */
-    protected static ?Enforcer $_manager = null;
+    protected static $_manager = null;
 
     /**
      * @param Worker $worker

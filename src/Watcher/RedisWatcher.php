@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @desc RedisWatcher.php 描述信息
  * @author Tinywan(ShaoBo Wan)
@@ -16,11 +17,11 @@ use Workerman\Redis\Client;
 
 class RedisWatcher implements Watcher
 {
-    private Closure $callback;
+    private $callback;
 
-    private Client $pubRedis;
+    private $pubRedis;
 
-    private Client $subRedis;
+    private $subRedis;
 
     private $channel;
     /**
